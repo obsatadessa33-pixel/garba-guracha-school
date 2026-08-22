@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="om">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>Garba Guracha Secondary School - Portal Formal</title>
+</head>
+<body>
+
+    <!-- HEADER & BEEKSIISA BEELLAMA GALMEE -->
+    <header>
+        <h1>Garba Guracha Secondary School</h1>
+        <h3>Official Online Student Registration Portal</h3>
+        <p><strong>Beeksisa Beellama Galmee:</strong></p>
+        <ul>
+            <li>start day: <strong>September 01, 2026</strong></li>
+            <li>end day: <strong>September 30, 2026</strong></li>
+        </ul>
+    </header>
+
+    <hr>
+
+    <!-- SECTION 1: FOOMII GALMEE BARATTOOTAA -->
+    <section>
+        <h2>registration form</h2>
+        <form id="registrationForm">
+            <label for="name">Full Name </label><br>
+            <input type="text" id="name" required><br><br>
+
+            <label for="gender">Gender</label><br>
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br><br>
+
+            <label for="dob">Date of Birth </label><br>
+            <input type="text" id="dob" placeholder="DD/MM/YYYY" required><br><br>
+
+            <label for="grade">Grade</label><br>
+            <select id="grade" required>
+                <option value="">Select Grade</option>
+                <option value="Grade 9">Grade 9</option>
+                <option value="Grade 10">Grade 10</option>
+                <option value="Grade 11">Grade 11</option>
+                <option value="Grade 12">Grade 12</option>
+            </select><br><br>
+
+            <label for="phone">Phone Number</label><br>
+            <input type="tel" id="phone" required><br><br>
+
+            <button type="submit">Submit Registration</button>
+            <button type="reset">Clear Form</button>
+        </form>
+    </section>
+
+    <br><hr><br>
+
+    <!-- SECTION 2: ADMIN PORTAL -->
+    <section>
+        <h2>Admin Portal</h2>
+        <p>Tarree barattoota galmaa'anii ilaaluuf fi Excel'tti buufachuuf dura login godha:</p>
+
+        <!-- Form Login Admin -->
+        <div id="adminLoginForm">
+            <label for="adminUser">Username:</label><br>
+            <input type="text" id="adminUser"><br><br>
+
+            <label for="adminPass">Password:</label><br>
+            <input type="password" id="adminPass"><br><br>
+
+            <button type="button" onclick="loginAdmin()">Login as Admin</button>
+        </div>
+
+        <!-- Section Admin Login Ta'ee Booda Mul'atu -->
+        <div id="adminDataSection" style="display: none; margin-top: 20px;">
+            <p style="color: green;"><strong>Status: Admin Access Granted!</strong></p>
+            
+            <!-- BUTTON EXCEL DOWNLOAD -->
+            <button type="button" onclick="downloadExcel()" style="background-color: #1b5e20; color: white; padding: 10px 15px; border: none; cursor: pointer; font-weight: bold;">
+                📥 Download Excel (CSV)
+            </button>
+            <button type="button" onclick="logoutAdmin()" style="padding: 10px 15px; margin-left: 10px;">
+                Logout Admin
+            </button>
+
+            <br><br>
+
+            <h3>Tarree Barattoota Galmaa'anii</h3>
+            <table border="1" cellpadding="8" cellspacing="0" id="studentsTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Gender</th>
+                        <th>DOB</th>
+                        <th>Grade</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody id="studentList">
+                    <!-- Odeeffannoon galmaa'e asitti dabalama -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT: SUBMIT, ADMIN LOGIN FI EXCEL DOWNLOAD -->
+    <script>
+        let studentCount = 0;
+        let studentData = []; // Array odeeffannoo kuusuuf
+
+        // 1. Form Submit System
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            studentCount++;
+
+            let name = document.getElementById('name').value;
+            let gender = document.getElementById('gender').value;
+            let dob = document.getElementById('dob').value;
+            let grade = document.getElementById('grade').value;
+            let phone = document.getElementById('phone').value;
+
+            // Data array keessa kaa'uu
+            studentData.push({
+                id: studentCount,
+                name: name,
+                gender: gender,
+                dob: dob,
+                grade: grade,
+                phone: phone
+            });
+
+            // Table keessa kaa'uu
+            let table = document.getElementById('studentList');
+            let row = table.insertRow();
+            
+            row.insertCell(0).innerText = studentCount;
+            row.insertCell(1).innerText = name;
+            row.insertCell(2).innerText = gender;
+            row.insertCell(3).innerText = dob;
+            row.insertCell(4).innerText = grade;
+            row.insertCell(5).innerText = phone;
+
+            alert("Galmeen keessan milkaa'inaan raawwatameera!");
+            this.reset();
+        });
+
+        // 2. Admin Login System (Username: admin | Password: 1234)
+        function loginAdmin() {
+            let user = document.getElementById('adminUser').value;
+            let pass = document.getElementById('adminPass').value;
+
+            if (user === "admin" && pass === "1234") {
+                document.getElementById('adminLoginForm').style.display = "none";
+                document.getElementById('adminDataSection').style.display = "block";
+                alert("Welcome, Admin!");
+            } else {
+                alert("Username ykn Password dogoggora!");
+            }
+        }
+
+        // 3. Admin Logout System
+        function logoutAdmin() {
+            document.getElementById('adminLoginForm').style.display = "block";
+            document.getElementById('adminDataSection').style.display = "none";
+            document.getElementById('adminUser').value = "";
+            document.getElementById('adminPass').value = "";
+        }
+
+        // 4. FUNCTION EXCEL (CSV) DOWNLOAD GOCHU
+        function downloadExcel() {
+            if (studentData.length === 0) {
+                alert("Odeeffannoon barattootaa galmaa'e tokkollee hin jiru!");
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "ID,Full Name,Gender,DOB,Grade,Phone Number\n";
+
+            studentData.forEach(function(student) {
+                let row = `${student.id},"${student.name}",${student.gender},${student.dob},${student.grade},${student.phone}`;
+                csvContent += row + "\n";
+            });
+
+            let encodedUri = encodeURI(csvContent);
+            let link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "Garba_Guracha_Students_List.csv");
+            document.body.appendChild(link);
+
+            link.click(); // Download otomaatikiin jalqaba
+            document.body.removeChild(link);
+        }
+    </script>
+
+</body>
+</html>

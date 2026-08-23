@@ -1,5 +1,1381 @@
 <!DOCTYPE html>
+<html <!DOCTYPE html>
 <html lang="om">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garba Guracha Secondary School - Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #14532d;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            color: #14532d;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 11px;
+            margin-top: 6px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 11px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 4px;
+            font-weight: bold;
+        }
+
+        .submit {
+            background: #14532d;
+            color: white;
+        }
+
+        .clear {
+            background: #ddd;
+        }
+
+        .download {
+            background: #1b5e20;
+            color: white;
+        }
+
+        .logout {
+            background: #b91c1c;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            min-width: 900px;
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background: #14532d;
+            color: white;
+        }
+
+        .notice {
+            background: #e8f5e9;
+            padding: 12px;
+            border-left: 5px solid #14532d;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Garba Guracha Secondary School</h1>
+    <h3>Official Online Student Registration Portal</h3>
+
+    <p>
+        <strong>Beeksisa Beellama Galmee</strong>
+    </p>
+
+    <p>
+        September 01, 2026 – September 30, 2026
+    </p>
+</header>
+
+
+<div class="container">
+
+    <!-- REGISTRATION FORM -->
+    <div class="card">
+
+        <h2>Student Registration Form</h2>
+
+        <div class="notice">
+            Maaloo odeeffannoo sirrii guutuu. Bakka * qabu dirqamaan guuti.
+        </div>
+
+        <form id="registrationForm">
+
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" required>
+
+
+            <label for="gender">Gender *</label>
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+
+            <label for="dob">Date of Birth *</label>
+            <input
+                type="text"
+                id="dob"
+                placeholder="DD/MM/YYYY"
+                required
+            >
+
+
+            <label for="birthPlace">Birth Place *</label>
+            <input
+                type="text"
+                id="birthPlace"
+                placeholder="Fakkeenya: Garba Guracha"
+                required
+            >
+
+
+            <label for="grade">Grade *</label>
+            <select id="grade" required>
+
+                <option value="">Select Grade</option>
+
+                <option value="Grade 9">
+                    Grade 9
+                </option>
+
+                <option value="Grade 10">
+                    Grade 10
+                </option>
+
+                <option value="Grade 11">
+                    Grade 11
+                </option>
+
+                <option value="Grade 12">
+                    Grade 12
+                </option>
+
+            </select>
+
+
+            <label for="stream">Stream</label>
+            <select id="stream">
+
+                <option value="">
+                    Select Stream
+                </option>
+
+                <option value="Natural Science">
+                    Natural Science
+                </option>
+
+                <option value="Social Science">
+                    Social Science
+                </option>
+
+                <option value="General">
+                    General
+                </option>
+
+            </select>
+
+
+            <label for="phone">Student Phone Number *</label>
+            <input
+                type="tel"
+                id="phone"
+                placeholder="09XXXXXXXX"
+                required
+            >
+
+
+            <label for="address">Address</label>
+            <input
+                type="text"
+                id="address"
+                placeholder="Bakka jireenyaa"
+            >
+
+
+            <label for="parentName">
+                Parent / Guardian Name *
+            </label>
+            <input
+                type="text"
+                id="parentName"
+                required
+            >
+
+
+            <label for="parentPhone">
+                Parent / Guardian Phone *
+            </label>
+            <input
+                type="tel"
+                id="parentPhone"
+                placeholder="09XXXXXXXX"
+                required
+            >
+
+
+            <label for="previousSchool">
+                Previous School
+            </label>
+            <input
+                type="text"
+                id="previousSchool"
+                placeholder="Maqaa mana barumsaa duraanii"
+            >
+
+
+            <button
+                type="submit"
+                class="submit"
+            >
+                Submit Registration
+            </button>
+
+
+            <button
+                type="reset"
+                class="clear"
+            >
+                Clear Form
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ADMIN PORTAL -->
+    <div class="card">
+
+        <h2>Admin Portal</h2>
+
+        <p>
+            Tarree barattoota galmaa'anii ilaaluuf
+            Admin Login godhi.
+        </p>
+
+
+        <div id="adminLoginForm">
+
+            <label for="adminUser">
+                Username
+            </label>
+
+            <input
+                type="text"
+                id="adminUser"
+            >
+
+
+            <label for="adminPass">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="adminPass"
+            >
+
+
+            <button
+                type="button"
+                class="submit"
+                onclick="loginAdmin()"
+            >
+                Login as Admin
+            </button>
+
+        </div>
+
+
+        <!-- ADMIN DATA -->
+        <div
+            id="adminDataSection"
+            style="display:none;"
+        >
+
+            <p class="success">
+                Status: Admin Access Granted!
+            </p>
+
+
+            <button
+                type="button"
+                class="download"
+                onclick="downloadExcel()"
+            >
+                Download Excel (CSV)
+            </button>
+
+
+            <button
+                type="button"
+                class="logout"
+                onclick="logoutAdmin()"
+            >
+                Logout Admin
+            </button>
+
+
+            <h3>
+                Registered Students
+            </h3>
+
+
+            <div style="overflow-x:auto;">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>#</th>
+                            <th>Full Name</th>
+                            <th>Gender</th>
+                            <th>DOB</th>
+                            <th>Birth Place</th>
+                            <th>Grade</th>
+                            <th>Stream</th>
+                            <th>Student Phone</th>
+                            <th>Address</th>
+                            <th>Parent Name</th>
+                            <th>Parent Phone</th>
+                            <th>Previous School</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="studentList">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    © 2026 Garba Guracha Secondary School
+</footer>
+
+
+<script>
+
+let studentCount = 0;
+
+let studentData = [];
+
+
+// STUDENT REGISTRATION
+document
+.getElementById("registrationForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+
+    studentCount++;
+
+
+    let name =
+        document.getElementById("name").value;
+
+    let gender =
+        document.getElementById("gender").value;
+
+    let dob =
+        document.getElementById("dob").value;
+
+    let birthPlace =
+        document.getElementById("birthPlace").value;
+
+    let grade =
+        document.getElementById("grade").value;
+
+    let stream =
+        document.getElementById("stream").value;
+
+    let phone =
+        document.getElementById("phone").value;
+
+    let address =
+        document.getElementById("address").value;
+
+    let parentName =
+        document.getElementById("parentName").value;
+
+    let parentPhone =
+        document.getElementById("parentPhone").value;
+
+    let previousSchool =
+        document.getElementById("previousSchool").value;
+
+
+    // SAVE DATA
+    studentData.push({
+
+        id: studentCount,
+
+        name: name,
+
+        gender: gender,
+
+        dob: dob,
+
+        birthPlace: birthPlace,
+
+        grade: grade,
+
+        stream: stream,
+
+        phone: phone,
+
+        address: address,
+
+        parentName: parentName,
+
+        parentPhone: parentPhone,
+
+        previousSchool: previousSchool
+
+    });
+
+
+    // ADD TO TABLE
+    let table =
+        document.getElementById("studentList");
+
+    let row =
+        table.insertRow();
+
+
+    row.insertCell(0)
+       .innerText = studentCount;
+
+    row.insertCell(1)
+       .innerText = name;
+
+    row.insertCell(2)
+       .innerText = gender;
+
+    row.insertCell(3)
+       .innerText = dob;
+
+    row.insertCell(4)
+       .innerText = birthPlace;
+
+    row.insertCell(5)
+       .innerText = grade;
+
+    row.insertCell(6)
+       .innerText = stream;
+
+    row.insertCell(7)
+       .innerText = phone;
+
+    row.insertCell(8)
+       .innerText = address;
+
+    row.insertCell(9)
+       .innerText = parentName;
+
+    row.insertCell(10)
+       .innerText = parentPhone;
+
+    row.insertCell(11)
+       .innerText = previousSchool;
+
+
+    alert(
+        "Galmeen keessan milkaa'inaan raawwatameera!"
+    );
+
+
+    this.reset();
+
+});
+
+
+// ADMIN LOGIN
+function loginAdmin() {
+
+    let user =
+        document.getElementById("adminUser").value;
+
+    let pass =
+        document.getElementById("adminPass").value;
+
+
+    if (
+        user === "admin" &&
+        pass === "1234"
+    ) {
+
+        document.getElementById(
+            "adminLoginForm"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "adminDataSection"
+        ).style.display = "block";
+
+
+        alert("Welcome, Admin!");
+
+    }
+
+    else {
+
+        alert(
+            "Username ykn Password dogoggora!"
+        );
+
+    }
+
+}
+
+
+// ADMIN LOGOUT
+function logoutAdmin() {
+
+    document.getElementById(
+        "adminLoginForm"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "adminDataSection"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "adminUser"
+    ).value = "";
+
+
+    document.getElementById(
+        "adminPass"
+    ).value = "";
+
+}
+
+
+// EXCEL / CSV DOWNLOAD
+function downloadExcel() {
+
+    if (studentData.length === 0) {
+
+        alert(
+            "Odeeffannoon barattootaa hin jiru!"
+        );
+
+        return;
+
+    }
+
+
+    let csvContent =
+        "data:text/csv;charset=utf-8,";
+
+
+    csvContent +=
+        "ID,Full Name,Gender,DOB,Birth Place,Grade,Stream,Student Phone,Address,Parent Name,Parent Phone,Previous School\n";
+
+
+    studentData.forEach(
+        function(student) {
+
+            let row =
+                `${student.id},"${student.name}","${student.gender}","${student.dob}","${student.birthPlace}","${student.grade}","${student.stream}","${student.phone}","${student.address}","${student.parentName}","${student.parentPhone}","${student.previousSchool}"`;
+
+
+            csvContent +=
+                row + "\n";
+
+        }
+    );
+
+
+    let encodedUri =
+        encodeURI(csvContent);
+
+
+    let link =
+        document.createElement("a");
+
+
+    link.setAttribute(
+        "href",
+        encodedUri
+    );
+
+
+    link.setAttribute(
+        "download",
+        "Garba_Guracha_Students_List.csv"
+    );
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+}
+
+</script>
+
+</body>
+</html>="om"><!DOCTYPE html>
+<html lang="om">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garba Guracha Secondary School - Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #14532d;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            color: #14532d;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 11px;
+            margin-top: 6px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 11px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 4px;
+            font-weight: bold;
+        }
+
+        .submit {
+            background: #14532d;
+            color: white;
+        }
+
+        .clear {
+            background: #ddd;
+        }
+
+        .download {
+            background: #1b5e20;
+            color: white;
+        }
+
+        .logout {
+            background: #b91c1c;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            min-width: 900px;
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background: #14532d;
+            color: white;
+        }
+
+        .notice {
+            background: #e8f5e9;
+            padding: 12px;
+            border-left: 5px solid #14532d;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Garba Guracha Secondary School</h1>
+    <h3>Official Online Student Registration Portal</h3>
+
+    <p>
+        <strong>Beeksisa Beellama Galmee</strong>
+    </p>
+
+    <p>
+        September 01, 2026 – September 30, 2026
+    </p>
+</header>
+
+
+<div class="container">
+
+    <!-- REGISTRATION FORM -->
+    <div class="card">
+
+        <h2>Student Registration Form</h2>
+
+        <div class="notice">
+            Maaloo odeeffannoo sirrii guutuu. Bakka * qabu dirqamaan guuti.
+        </div>
+
+        <form id="registrationForm">
+
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" required>
+
+
+            <label for="gender">Gender *</label>
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+
+            <label for="dob">Date of Birth *</label>
+            <input
+                type="text"
+                id="dob"
+                placeholder="DD/MM/YYYY"
+                required
+            >
+
+
+            <label for="birthPlace">Birth Place *</label>
+            <input
+                type="text"
+                id="birthPlace"
+                placeholder="Fakkeenya: Garba Guracha"
+                required
+            >
+
+
+            <label for="grade">Grade *</label>
+            <select id="grade" required>
+
+                <option value="">Select Grade</option>
+
+                <option value="Grade 9">
+                    Grade 9
+                </option>
+
+                <option value="Grade 10">
+                    Grade 10
+                </option>
+
+                <option value="Grade 11">
+                    Grade 11
+                </option>
+
+                <option value="Grade 12">
+                    Grade 12
+                </option>
+
+            </select>
+
+
+            <label for="stream">Stream</label>
+            <select id="stream">
+
+                <option value="">
+                    Select Stream
+                </option>
+
+                <option value="Natural Science">
+                    Natural Science
+                </option>
+
+                <option value="Social Science">
+                    Social Science
+                </option>
+
+                <option value="General">
+                    General
+                </option>
+
+            </select>
+
+
+            <label for="phone">Student Phone Number *</label>
+            <input
+                type="tel"
+                id="phone"
+                placeholder="09XXXXXXXX"
+                required
+            >
+
+
+            <label for="address">Address</label>
+            <input
+                type="text"
+                id="address"
+                placeholder="Bakka jireenyaa"
+            >
+
+
+            <label for="parentName">
+                Parent / Guardian Name *
+            </label>
+            <input
+                type="text"
+                id="parentName"
+                required
+            >
+
+
+            <label for="parentPhone">
+                Parent / Guardian Phone *
+            </label>
+            <input
+                type="tel"
+                id="parentPhone"
+                placeholder="09XXXXXXXX"
+                required
+            >
+
+
+            <label for="previousSchool">
+                Previous School
+            </label>
+            <input
+                type="text"
+                id="previousSchool"
+                placeholder="Maqaa mana barumsaa duraanii"
+            >
+
+
+            <button
+                type="submit"
+                class="submit"
+            >
+                Submit Registration
+            </button>
+
+
+            <button
+                type="reset"
+                class="clear"
+            >
+                Clear Form
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ADMIN PORTAL -->
+    <div class="card">
+
+        <h2>Admin Portal</h2>
+
+        <p>
+            Tarree barattoota galmaa'anii ilaaluuf
+            Admin Login godhi.
+        </p>
+
+
+        <div id="adminLoginForm">
+
+            <label for="adminUser">
+                Username
+            </label>
+
+            <input
+                type="text"
+                id="adminUser"
+            >
+
+
+            <label for="adminPass">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="adminPass"
+            >
+
+
+            <button
+                type="button"
+                class="submit"
+                onclick="loginAdmin()"
+            >
+                Login as Admin
+            </button>
+
+        </div>
+
+
+        <!-- ADMIN DATA -->
+        <div
+            id="adminDataSection"
+            style="display:none;"
+        >
+
+            <p class="success">
+                Status: Admin Access Granted!
+            </p>
+
+
+            <button
+                type="button"
+                class="download"
+                onclick="downloadExcel()"
+            >
+                Download Excel (CSV)
+            </button>
+
+
+            <button
+                type="button"
+                class="logout"
+                onclick="logoutAdmin()"
+            >
+                Logout Admin
+            </button>
+
+
+            <h3>
+                Registered Students
+            </h3>
+
+
+            <div style="overflow-x:auto;">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>#</th>
+                            <th>Full Name</th>
+                            <th>Gender</th>
+                            <th>DOB</th>
+                            <th>Birth Place</th>
+                            <th>Grade</th>
+                            <th>Stream</th>
+                            <th>Student Phone</th>
+                            <th>Address</th>
+                            <th>Parent Name</th>
+                            <th>Parent Phone</th>
+                            <th>Previous School</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="studentList">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    © 2026 Garba Guracha Secondary School
+</footer>
+
+
+<script>
+
+let studentCount = 0;
+
+let studentData = [];
+
+
+// STUDENT REGISTRATION
+document
+.getElementById("registrationForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+
+    studentCount++;
+
+
+    let name =
+        document.getElementById("name").value;
+
+    let gender =
+        document.getElementById("gender").value;
+
+    let dob =
+        document.getElementById("dob").value;
+
+    let birthPlace =
+        document.getElementById("birthPlace").value;
+
+    let grade =
+        document.getElementById("grade").value;
+
+    let stream =
+        document.getElementById("stream").value;
+
+    let phone =
+        document.getElementById("phone").value;
+
+    let address =
+        document.getElementById("address").value;
+
+    let parentName =
+        document.getElementById("parentName").value;
+
+    let parentPhone =
+        document.getElementById("parentPhone").value;
+
+    let previousSchool =
+        document.getElementById("previousSchool").value;
+
+
+    // SAVE DATA
+    studentData.push({
+
+        id: studentCount,
+
+        name: name,
+
+        gender: gender,
+
+        dob: dob,
+
+        birthPlace: birthPlace,
+
+        grade: grade,
+
+        stream: stream,
+
+        phone: phone,
+
+        address: address,
+
+        parentName: parentName,
+
+        parentPhone: parentPhone,
+
+        previousSchool: previousSchool
+
+    });
+
+
+    // ADD TO TABLE
+    let table =
+        document.getElementById("studentList");
+
+    let row =
+        table.insertRow();
+
+
+    row.insertCell(0)
+       .innerText = studentCount;
+
+    row.insertCell(1)
+       .innerText = name;
+
+    row.insertCell(2)
+       .innerText = gender;
+
+    row.insertCell(3)
+       .innerText = dob;
+
+    row.insertCell(4)
+       .innerText = birthPlace;
+
+    row.insertCell(5)
+       .innerText = grade;
+
+    row.insertCell(6)
+       .innerText = stream;
+
+    row.insertCell(7)
+       .innerText = phone;
+
+    row.insertCell(8)
+       .innerText = address;
+
+    row.insertCell(9)
+       .innerText = parentName;
+
+    row.insertCell(10)
+       .innerText = parentPhone;
+
+    row.insertCell(11)
+       .innerText = previousSchool;
+
+
+    alert(
+        "Galmeen keessan milkaa'inaan raawwatameera!"
+    );
+
+
+    this.reset();
+
+});
+
+
+// ADMIN LOGIN
+function loginAdmin() {
+
+    let user =
+        document.getElementById("adminUser").value;
+
+    let pass =
+        document.getElementById("adminPass").value;
+
+
+    if (
+        user === "admin" &&
+        pass === "1234"
+    ) {
+
+        document.getElementById(
+            "adminLoginForm"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "adminDataSection"
+        ).style.display = "block";
+
+
+        alert("Welcome, Admin!");
+
+    }
+
+    else {
+
+        alert(
+            "Username ykn Password dogoggora!"
+        );
+
+    }
+
+}
+
+
+// ADMIN LOGOUT
+function logoutAdmin() {
+
+    document.getElementById(
+        "adminLoginForm"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "adminDataSection"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "adminUser"
+    ).value = "";
+
+
+    document.getElementById(
+        "adminPass"
+    ).value = "";
+
+}
+
+
+// EXCEL / CSV DOWNLOAD
+function downloadExcel() {
+
+    if (studentData.length === 0) {
+
+        alert(
+            "Odeeffannoon barattootaa hin jiru!"
+        );
+
+        return;
+
+    }
+
+
+    let csvContent =
+        "data:text/csv;charset=utf-8,";
+
+
+    csvContent +=
+        "ID,Full Name,Gender,DOB,Birth Place,Grade,Stream,Student Phone,Address,Parent Name,Parent Phone,Previous School\n";
+
+
+    studentData.forEach(
+        function(student) {
+
+            let row =
+                `${student.id},"${student.name}","${student.gender}","${student.dob}","${student.birthPlace}","${student.grade}","${student.stream}","${student.phone}","${student.address}","${student.parentName}","${student.parentPhone}","${student.previousSchool}"`;
+
+
+            csvContent +=
+                row + "\n";
+
+        }
+    );
+
+
+    let encodedUri =
+        encodeURI(csvContent);
+
+
+    let link =
+        document.createElement("a");
+
+
+    link.setAttribute(
+        "href",
+        encodedUri
+    );
+
+
+    link.setAttribute(
+        "download",
+        "Garba_Guracha_Students_List.csv"
+    );
+
+
+    document.body.appendChild(link);
+
+
+    link.click();
+
+
+    document.body.removeChild(link);
+
+}
+
+</script>
+
+</body>
+</html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.5">
@@ -155,45 +1531,3 @@
             if (user === "admin" && pass === "1234") {
                 document.getElementById('adminLoginForm').style.display = "none";
                 document.getElementById('adminDataSection').style.display = "block";
-                alert("Welcome, Admin!");
-            } else {
-                alert("Username ykn Password dogoggora!");
-            }
-        }
-
-        // 3. Admin Logout System
-        function logoutAdmin() {
-            document.getElementById('adminLoginForm').style.display = "block";
-            document.getElementById('adminDataSection').style.display = "none";
-            document.getElementById('adminUser').value = "";
-            document.getElementById('adminPass').value = "";
-        }
-
-        // 4. FUNCTION EXCEL (CSV) DOWNLOAD GOCHU
-        function downloadExcel() {
-            if (studentData.length === 0) {
-                alert("Odeeffannoon barattootaa galmaa'e tokkollee hin jiru!");
-                return;
-            }
-
-            let csvContent = "data:text/csv;charset=utf-8,";
-            csvContent += "ID,Full Name,Gender,DOB,Grade,Phone Number\n";
-
-            studentData.forEach(function(student) {
-                let row = `${student.id},"${student.name}",${student.gender},${student.dob},${student.grade},${student.phone}`;
-                csvContent += row + "\n";
-            });
-
-            let encodedUri = encodeURI(csvContent);
-            let link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", "Garba_Guracha_Students_List.csv");
-            document.body.appendChild(link);
-
-            link.click(); // Download otomaatikiin jalqaba
-            document.body.removeChild(link);
-        }
-    </script>
-
-</body>
-</html>
